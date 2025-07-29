@@ -1,0 +1,406 @@
+{
+  "KB121": {
+    "modelName": "Range Rover Autobiography",
+    "variantName": "400P",
+    "totalInterior": 3,
+    "totalExterior": 2,
+    "totalLoose": 1,
+    "mainImagePath": "data/main_images/KB121/carmain.jpg",
+    "components": [
+      {
+        "name": "Steering",
+        "type": "Interior",
+        "totalSubComponents": 1,
+        "mainImage": "data/reference_images/KB121/Steering/steering_main.jpg",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "data/models/KB121/Steering/dontdetect.pt",
+          "YOLO_ROIDETECT": "SKIP",
+          "YOLO_CONVERTTOBW": "SKIP",
+          "YOLO_SIMPLEDETECT": "data/models/KB121/Steering/steeringsimple.pt",
+          "OCR_DETECT": "SKIP",
+          "YOLO_DONTDETECTANNOTATION": "ThirdSprocket",
+          "YOLO_SIMPLEDETECTANNOTATION": "Wooden Steering,Caraway_Dab,Caraway_IP",
+          "OCR_DETECTANNOTATION": "SKIP"
+        }
+      },
+      {
+        "name": "Refrigerator",
+        "type": "Interior",
+        "totalSubComponents": 1,
+        "mainImage": "data/reference_images/KB121/Refrigerator/refrigeratormain.jpg",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "SKIP",
+          "YOLO_ROIDETECT": "SKIP",
+          "YOLO_CONVERTTOBW": "SKIP",
+          "YOLO_SIMPLEDETECT": "data/models/KB121/Refrigerator/refrigerator.pt",
+          "OCR_DETECT": "SKIP",
+          "YOLO_DONTDETECTANNOTATION": "SKIP",
+          "YOLO_SIMPLEDETECTANNOTATION": "Refrigerator_Button",
+          "OCR_DETECTANNOTATION": "SKIP"
+        }
+      },
+      {
+        "name": "Doorpad",
+        "type": "Interior",
+        "totalSubComponents": 4,
+        "mainImage": "data/reference_images/KB121/Doorpad/doorpadmain.jpg",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "data/models/KB121/Doorpad/dontdetect.pt",
+          "YOLO_ROIDETECT": "SKIP",
+          "YOLO_CONVERTTOBW": "SKIP",
+          "YOLO_SIMPLEDETECT": "data/models/KB121/Doorpad/dontdetect.pt",
+          "OCR_DETECT": "SKIP",
+          "YOLO_DONTDETECTANNOTATION": "RSWoodBlack_Veneer",
+          "YOLO_SIMPLEDETECTANNOTATION": "RRWoodBrown_Veneer",
+          "OCR_DETECTANNOTATION": "SKIP"
+        }
+      },
+      {
+        "name": "Tyre",
+        "type": "Exterior",
+        "totalSubComponents": 4,
+        "mainImage": "data/reference_images/KB121/Tyre/tyre_main.jpg",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "SKIP",
+          "YOLO_ROIDETECT": "SKIP",
+          "YOLO_CONVERTTOBW": "SKIP",
+          "YOLO_SIMPLEDETECT": "data/models/KB121/Tyre/tyre_simple.pt",
+          "OCR_DETECT": "SKIP",
+          "YOLO_DONTDETECTANNOTATION": "SKIP",
+          "YOLO_SIMPLEDETECTANNOTATION": "RRAutobiography_Spoke",
+          "OCR_DETECTANNOTATION": "SKIP"
+        }
+      },
+      {
+        "name": "Lettering",
+        "type": "Exterior",
+        "totalSubComponents": 4,
+        "mainImage": "data/reference_images/KB121/Lettering/lettering_main.jpg",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "data/models/KB121/Lettering/dontdetect.pt",
+          "YOLO_ROIDETECT": "data/models/KB121/Lettering/roi_detect.pt",
+          "YOLO_CONVERTTOBW": "YES",
+          "YOLO_SIMPLEDETECT": "data/models/KB121/Lettering/lettering_simple.pt",
+          "OCR_DETECT": "SKIP",
+          "YOLO_DONTDETECTANNOTATION": "RS_Lettering",
+          "YOLO_SIMPLEDETECTANNOTATION": "LightPop",
+          "OCR_DETECTANNOTATION": "SKIP"
+        }
+      },
+      {
+        "name": "Smile Line",
+        "type": "Loose",
+        "totalSubComponents": 1,
+        "mainImage": "data/reference_images/KB121/SmileLine/smile_line_main.jpg",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "SKIP",
+          "YOLO_ROIDETECT": "data/models/KB121/SmileLine/roi_detect.pt",
+          "YOLO_CONVERTTOBW": "YES",
+          "YOLO_SIMPLEDETECT": "data/models/KB121/SmileLine/smile_simple.pt",
+          "OCR_DETECT": "SKIP",
+          "YOLO_DONTDETECTANNOTATION": "SKIP",
+          "YOLO_SIMPLEDETECTANNOTATION": "LightPop",
+          "OCR_DETECTANNOTATION": "SKIP"
+        }
+      }
+    ],
+    "subComponents": [
+      {
+        "component": "Steering",
+        "name": "Main Steering",
+        "instruction": "ALIGN CAMERA WITH STEERING",
+        "referenceImage": "data/reference_images/KB121/Steering/main_steering.jpg"
+      },
+      {
+        "component": "Refrigerator",
+        "name": "Main Refrigerator",
+        "instruction": "OPEN THE DOOR AND FOCUS",
+        "referenceImage": "data/reference_images/KB121/Refrigerator/refrigerator.jpg"
+      },
+      {
+        "component": "Doorpad",
+        "name": "Left Front Doorpad",
+        "instruction": "ALIGN PARALLEL TO THE DOORPAD",
+        "referenceImage": "data/reference_images/KB121/Doorpad/left_front_doorpad.jpg"
+      },
+      {
+        "component": "Doorpad",
+        "name": "Right Front Doorpad",
+        "instruction": "ALIGN PARALLEL TO THE DOORPAD",
+        "referenceImage": "data/reference_images/KB121/Doorpad/right_front_doorpad.jpg"
+      },
+      {
+        "component": "Doorpad",
+        "name": "Left Rear Doorpad",
+        "instruction": "ALIGN PARALLEL TO THE DOORPAD",
+        "referenceImage": "data/reference_images/KB121/Doorpad/left_rear_doorpad.jpg"
+      },
+      {
+        "component": "Doorpad",
+        "name": "Right Rear Doorpad",
+        "instruction": "ALIGN PARALLEL TO THE DOORPAD",
+        "referenceImage": "data/reference_images/KB121/Doorpad/right_rear_doorpad.jpg"
+      },
+      {
+        "component": "Tyre",
+        "name": "Left Front Tyre",
+        "instruction": "BEND DOWN TO TAKE THE PHOTO, IT MUST BE CLEAR",
+        "referenceImage": "data/reference_images/KB121/Tyre/left_front_tyre.jpg"
+      },
+      {
+        "component": "Tyre",
+        "name": "Right Front Tyre",
+        "instruction": "BEND DOWN TO TAKE THE PHOTO, IT MUST BE CLEAR",
+        "referenceImage": "data/reference_images/KB121/Tyre/right_front_tyre.jpg"
+      },
+      {
+        "component": "Tyre",
+        "name": "Left Rear Tyre",
+        "instruction": "BEND DOWN TO TAKE THE PHOTO, IT MUST BE CLEAR",
+        "referenceImage": "data/reference_images/KB121/Tyre/left_rear_tyre.jpg"
+      },
+      {
+        "component": "Tyre",
+        "name": "Right Rear Tyre",
+        "instruction": "BEND DOWN TO TAKE THE PHOTO, IT MUST BE CLEAR",
+        "referenceImage": "data/reference_images/KB121/Tyre/right_rear_tyre.jpg"
+      },
+      {
+        "component": "Lettering",
+        "name": "Front Range",
+        "instruction": "FOCUS ON THE LETTERING STRAIGHT ON",
+        "referenceImage": "data/reference_images/KB121/Lettering/front_range.jpg"
+      },
+      {
+        "component": "Lettering",
+        "name": "Rear Range",
+        "instruction": "FOCUS ON THE LETTERING STRAIGHT ON",
+        "referenceImage": "data/reference_images/KB121/Lettering/rear_range.jpg"
+      },
+      {
+        "component": "Lettering",
+        "name": "Front Rover",
+        "instruction": "FOCUS ON THE LETTERING STRAIGHT ON",
+        "referenceImage": "data/reference_images/KB121/Lettering/front_rover.jpg"
+      },
+      {
+        "component": "Lettering",
+        "name": "Rear Rover",
+        "instruction": "FOCUS ON THE LETTERING STRAIGHT ON",
+        "referenceImage": "data/reference_images/KB121/Lettering/rear_rover.jpg"
+      },
+      {
+        "component": "Smile Line",
+        "name": "Front Smile Line",
+        "instruction": "ALIGN PARALLEL TO THE SMILE LINE",
+        "referenceImage": "data/reference_images/KB121/SmileLine/smile_line.jpg"
+      }
+    ]
+  },
+  "KB118": {
+    "modelName": "Range Rover Sport",
+    "variantName": "300P",
+    "totalInterior": 2,
+    "totalExterior": 2,
+    "totalLoose": 1,
+    "mainImagePath": "data/main_images/KB118/car_main.jpg",
+    "components": [
+      {
+        "name": "Speaker",
+        "type": "Interior",
+        "totalSubComponents": 4,
+        "mainImage": "data/reference_images/KB118/Speaker/speaker_main.jpg",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "SKIP",
+          "YOLO_ROIDETECT": "SKIP",
+          "YOLO_CONVERTTOBW": "SKIP",
+          "YOLO_SIMPLEDETECT": "data/models/KB118/Speaker/speaker_simple.pt",
+          "OCR_DETECT": "SKIP",
+          "YOLO_DONTDETECTANNOTATION": "SKIP",
+          "YOLO_SIMPLEDETECTANNOTATION": "HSE",
+          "OCR_DETECTANNOTATION": "SKIP"
+        }
+      },
+      {
+        "name": "Refrigerator",
+        "type": "Interior",
+        "totalSubComponents": 1,
+        "mainImage": "data/reference_images/KB118/Refrigerator/refrigerator_main.jpg",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "SKIP",
+          "YOLO_ROIDETECT": "SKIP",
+          "YOLO_CONVERTTOBW": "SKIP",
+          "YOLO_SIMPLEDETECT": "data/models/KB118/Refrigerator/refrigerator.pt",
+          "OCR_DETECT": "SKIP",
+          "YOLO_DONTDETECTANNOTATION": "SKIP",
+          "YOLO_SIMPLEDETECTANNOTATION": "Refrigerator_Button",
+          "OCR_DETECTANNOTATION": "SKIP"
+        }
+      },
+      {
+        "name": "Front Door Finisher",
+        "type": "Exterior",
+        "totalSubComponents": 2,
+        "mainImage": "data/reference_images/KB118/FrontDoorFinisher/front_door_finisher_main.jpg",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "SKIP",
+          "YOLO_ROIDETECT": "SKIP",
+          "YOLO_CONVERTTOBW": "SKIP",
+          "YOLO_SIMPLEDETECT": "SKIP",
+          "OCR_DETECT": "YES",
+          "YOLO_DONTDETECTANNOTATION": "SKIP",
+          "YOLO_SIMPLEDETECTANNOTATION": "SKIP",
+          "OCR_DETECTANNOTATION": "SKIP"
+        }
+      },
+      {
+        "name": "Bumper",
+        "type": "Exterior",
+        "totalSubComponents": 1,
+        "mainImage": "data/reference_images/KB118/Bumper/bumper_main.jpg",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "SKIP",
+          "YOLO_ROIDETECT": "data/models/KB118/Bumper/roi_detect.pt",
+          "YOLO_CONVERTTOBW": "YES",
+          "YOLO_SIMPLEDETECT": "data/models/KB118/Bumper/bumper_simple.pt",
+          "OCR_DETECT": "SKIP",
+          "YOLO_DONTDETECTANNOTATION": "SKIP",
+          "YOLO_SIMPLEDETECTANNOTATION": "LightPop",
+          "OCR_DETECTANNOTATION": "SKIP"
+        }
+      },
+      {
+        "name": "Brake Caliper",
+        "type": "Loose",
+        "totalSubComponents": 4,
+        "mainImage": "data/reference_images/KB118/BrakeCaliper/brake_caliper_main.jpg",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "SKIP",
+          "YOLO_ROIDETECT": "SKIP",
+          "YOLO_CONVERTTOBW": "SKIP",
+          "YOLO_SIMPLEDETECT": "data/models/KB118/BrakeCaliper/caliper_simple.pt",
+          "OCR_DETECT": "SKIP",
+          "YOLO_DONTDETECTANNOTATION": "SKIP",
+          "YOLO_SIMPLEDETECTANNOTATION": "Unpainted_BrakeCaliper",
+          "OCR_DETECTANNOTATION": "SKIP"
+        }
+      }
+    ],
+    "subComponents": [
+      {
+        "component": "Speaker",
+        "name": "Left Front Speaker",
+        "instruction": "ALIGN CAMERA WITH SPEAKER GRILL",
+        "referenceImage": "data/reference_images/KB118/Speaker/left_front_speaker.jpg"
+      },
+      {
+        "component": "Speaker",
+        "name": "Right Front Speaker",
+        "instruction": "ALIGN CAMERA WITH SPEAKER GRILL",
+        "referenceImage": "data/reference_images/KB118/Speaker/right_front_speaker.jpg"
+      },
+      {
+        "component": "Speaker",
+        "name": "Left Rear Speaker",
+        "instruction": "ALIGN CAMERA WITH SPEAKER GRILL",
+        "referenceImage": "data/reference_images/KB118/Speaker/left_rear_speaker.jpg"
+      },
+      {
+        "component": "Speaker",
+        "name": "Right Rear Speaker",
+        "instruction": "ALIGN CAMERA WITH SPEAKER GRILL",
+        "referenceImage": "data/reference_images/KB118/Speaker/right_rear_speaker.jpg"
+      },
+      {
+        "component": "Refrigerator",
+        "name": "Main Refrigerator",
+        "instruction": "OPEN THE DOOR AND FOCUS",
+        "referenceImage": "data/reference_images/KB118/Refrigerator/refrigerator.jpg"
+      },
+      {
+        "component": "Front Door Finisher",
+        "name": "Left Finisher",
+        "instruction": "FOCUS STRAIGHT ON THE FINISHER",
+        "referenceImage": "data/reference_images/KB118/FrontDoorFinisher/left_finisher.jpg"
+      },
+      {
+        "component": "Front Door Finisher",
+        "name": "Right Finisher",
+        "instruction": "FOCUS STRAIGHT ON THE FINISHER",
+        "referenceImage": "data/reference_images/KB118/FrontDoorFinisher/right_finisher.jpg"
+      },
+      {
+        "component": "Bumper",
+        "name": "Front Bumper",
+        "instruction": "FOCUS STRAIGHT ON THE BUMPER",
+        "referenceImage": "data/reference_images/KB118/Bumper/front_bumper.jpg"
+      },
+      {
+        "component": "Brake Caliper",
+        "name": "Left Front Caliper",
+        "instruction": "ALIGN CAMERA TO CALIPER",
+        "referenceImage": "data/reference_images/KB118/BrakeCaliper/left_front_caliper.jpg"
+      },
+      {
+        "component": "Brake Caliper",
+        "name": "Right Front Caliper",
+        "instruction": "ALIGN CAMERA TO CALIPER",
+        "referenceImage": "data/reference_images/KB118/BrakeCaliper/right_front_caliper.jpg"
+      },
+      {
+        "component": "Brake Caliper",
+        "name": "Left Rear Caliper",
+        "instruction": "ALIGN CAMERA TO CALIPER",
+        "referenceImage": "data/reference_images/KB118/BrakeCaliper/left_rear_caliper.jpg"
+      },
+      {
+        "component": "Brake Caliper",
+        "name": "Right Rear Caliper",
+        "instruction": "ALIGN CAMERA TO CALIPER",
+        "referenceImage": "data/reference_images/KB118/BrakeCaliper/right_rear_caliper.jpg"
+      }
+    ]
+  },
+  "K1055": {
+    "modelName": "Range Rover Velar",
+    "variantName": "HSE DYNAMIC",
+    "totalInterior": 1,
+    "totalExterior": 0,
+    "totalLoose": 0,
+    "mainImagePath": "E:/OXOAPP_Backend/data/main_images/K1055/logo.png",
+    "components": [
+      {
+        "name": "Steering",
+        "type": "Interior",
+        "totalSubComponents": 1,
+        "mainImage": "E:/OXOAPP_Backend/data/reference_images/K1055/Steering/IMG_0036.JPG",
+        "pipelineConfig": {
+          "YOLO_DONTDETECT": "E:/OXOAPP_Backend/data/models/K1055/Steering/dontdetect.pt",
+          "YOLO_ROIDETECT": "SKIP",
+          "YOLO_CONVERTTOBW": "SKIP",
+          "YOLO_SIMPLEDETECT": "E:/OXOAPP_Backend/data/models/K1055/Steering/steeringsimple.pt",
+          "OCR_DETECT": "SKIP",
+          "YOLO_DONTDETECTANNOTATION": "ThirdSprocket",
+          "YOLO_SIMPLEDETECTANNOTATION": "Perlion_Dab, Perlion_IP, Wooden Steering",
+          "OCR_DETECTANNOTATION": "SKIP"
+        },
+        "subComponents": [
+          {
+            "component": "Steering",
+            "name": "Steering Main in the car",
+            "instruction": "Take a good pic please Take a good pic please Take a good pic please Take a good pic please Take a good pic please",
+            "referenceImage": "E:/OXOAPP_Backend/data/reference_images/K1055/Steering/SteeringPTRunInference.png"
+          }
+        ]
+      }
+    ],
+    "subComponents": [
+      {
+        "component": "Steering",
+        "name": "Steering Main in the car",
+        "instruction": "Take a good pic please Take a good pic please Take a good pic please Take a good pic please Take a good pic please",
+        "referenceImage": "E:/OXOAPP_Backend/data/reference_images/K1055/Steering/SteeringPTRunInference.png"
+      }
+    ]
+  }
+}
